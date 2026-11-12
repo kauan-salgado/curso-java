@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo Código Local">
+  <!-- Quadrado arredondado terracota com os símbolos de código < / > -->
+  <rect width="64" height="64" rx="14" fill="#b4532f"/>
+  <path d="M24 20 L12 32 L24 44" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 20 L52 32 L40 44" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35 16 L29 48" fill="none" stroke="#ffb199" stroke-width="5" stroke-linecap="round"/>
+</svg>

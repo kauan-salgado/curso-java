@@ -1,0 +1,393 @@
+/* =========================================================
+   CÓDIGO LOCAL: personalização do Bootstrap 5
+   O layout (grid, espaçamentos, navbar, cards, formulário)
+   vem das classes do Bootstrap no HTML. Este arquivo só
+   aplica a identidade visual da marca por cima dele.
+   ========================================================= */
+
+/* =========================================================
+   1. CORES DA MARCA: TEMA CLARO
+   Paleta inspirada nos projetos: creme (Papiro e Cantinho),
+   terracota (Papiro) e coral (Go! Ticket).
+   ========================================================= */
+:root {
+    --cor-primaria: #b4532f;        /* terracota: botões e destaques */
+    --cor-primaria-rgb: 180, 83, 47;/* a mesma cor em RGB (o Bootstrap precisa assim) */
+    --cor-primaria-escura: #8f3f22; /* hover dos botões */
+    --cor-texto-botao: #ffffff;     /* texto em cima do terracota */
+    --cor-destaque: #ff5a78;        /* coral: selo do plano Completo */
+    --cor-fundo: #faf6ef;           /* creme: fundo da página */
+    --cor-fundo-alt: #f1e9dc;       /* creme mais escuro: seções alternadas */
+    --cor-card: #ffffff;            /* fundo dos cards */
+    --cor-texto: #2a2420;           /* marrom quase preto: texto principal */
+    --cor-texto-suave: #6b6058;     /* texto secundário */
+    --cor-borda: #e4d9c8;           /* linhas e bordas */
+    --cor-escura: #252118;          /* fundo do contato e do rodapé */
+
+    --raio: 16px;
+    --sombra: 0 4px 16px rgba(42, 36, 32, 0.08);
+    --sombra-forte: 0 12px 28px rgba(42, 36, 32, 0.16);
+}
+
+/* =========================================================
+   2. CORES DA MARCA: TEMA ESCURO
+   Ativado pelo botão 🌙 (script.js troca data-bs-theme no <html>)
+   ========================================================= */
+[data-bs-theme="dark"] {
+    --cor-primaria: #e3825a;        /* terracota mais claro para ler no fundo escuro */
+    --cor-primaria-rgb: 227, 130, 90;
+    --cor-primaria-escura: #f0a07f;
+    --cor-texto-botao: #1c1915;
+    --cor-fundo: #1c1915;
+    --cor-fundo-alt: #24201b;
+    --cor-card: #2b2620;
+    --cor-texto: #f3ece2;
+    --cor-texto-suave: #b8ad9f;
+    --cor-borda: #3d362d;
+    --cor-escura: #12100e;
+
+    --sombra: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --sombra-forte: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================================
+   3. LIGANDO AS CORES DA MARCA ÀS VARIÁVEIS DO BOOTSTRAP
+   Assim .text-primary, .bg-primary, .text-body-secondary etc.
+   passam a usar as nossas cores.
+   ========================================================= */
+:root,
+[data-bs-theme="dark"] {
+    --bs-primary: var(--cor-primaria);
+    --bs-primary-rgb: var(--cor-primaria-rgb);
+    --bs-body-bg: var(--cor-fundo);
+    --bs-body-color: var(--cor-texto);
+    --bs-secondary-color: var(--cor-texto-suave);
+    --bs-border-color: var(--cor-borda);
+    --bs-link-color: var(--cor-primaria);
+    --bs-link-color-rgb: var(--cor-primaria-rgb);
+    --bs-link-hover-color: var(--cor-primaria-escura);
+    --bs-body-font-family: "Inter", Arial, Helvetica, sans-serif;
+    --bs-body-line-height: 1.6;
+}
+
+html {
+    scroll-padding-top: 80px; /* o título não fica escondido atrás do menu fixo */
+}
+
+/* =========================================================
+   4. BOTÕES: .btn-primary e .btn-outline-primary na cor terracota
+   ========================================================= */
+.btn {
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    --bs-btn-color: var(--cor-texto-botao);
+    --bs-btn-bg: var(--cor-primaria);
+    --bs-btn-border-color: var(--cor-primaria);
+    --bs-btn-hover-color: var(--cor-texto-botao);
+    --bs-btn-hover-bg: var(--cor-primaria-escura);
+    --bs-btn-hover-border-color: var(--cor-primaria-escura);
+    --bs-btn-active-color: var(--cor-texto-botao);
+    --bs-btn-active-bg: var(--cor-primaria-escura);
+    --bs-btn-active-border-color: var(--cor-primaria-escura);
+    --bs-btn-focus-shadow-rgb: var(--cor-primaria-rgb);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--cor-primaria);
+    --bs-btn-border-color: var(--cor-primaria);
+    --bs-btn-hover-color: var(--cor-texto-botao);
+    --bs-btn-hover-bg: var(--cor-primaria);
+    --bs-btn-hover-border-color: var(--cor-primaria);
+    --bs-btn-active-color: var(--cor-texto-botao);
+    --bs-btn-active-bg: var(--cor-primaria);
+    --bs-btn-active-border-color: var(--cor-primaria);
+    --bs-btn-focus-shadow-rgb: var(--cor-primaria-rgb);
+}
+
+/* =========================================================
+   5. CABEÇALHO (Navbar)
+   ========================================================= */
+.cabecalho {
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid var(--cor-borda);
+    --bs-navbar-color: var(--cor-texto);
+    --bs-navbar-hover-color: var(--cor-primaria);
+    --bs-navbar-active-color: var(--cor-primaria); /* link da seção atual (Scrollspy) */
+    --bs-navbar-brand-color: var(--cor-texto);
+    --bs-navbar-brand-hover-color: var(--cor-texto);
+}
+
+.cabecalho .nav-link {
+    font-weight: 500;
+}
+
+.cabecalho .nav-link.active {
+    font-weight: 700;
+}
+
+/* =========================================================
+   6. HERO
+   ========================================================= */
+.hero {
+    padding: 100px 0 90px;
+    background: linear-gradient(180deg, var(--cor-fundo) 0%, var(--cor-fundo-alt) 100%);
+}
+
+.hero__etiqueta {
+    color: var(--cor-primaria);
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+}
+
+.hero__texto {
+    max-width: 620px;
+}
+
+/* =========================================================
+   7. SEÇÕES
+   ========================================================= */
+.secao {
+    padding: 80px 0;
+}
+
+.secao h2 {
+    font-size: 2.2rem;
+}
+
+.secao--alternada {
+    background-color: var(--cor-fundo-alt);
+}
+
+.secao--escura {
+    background-color: var(--cor-escura);
+    color: #fff;
+}
+
+.secao--escura .secao__subtitulo {
+    color: #d8cfc2;
+}
+
+/* =========================================================
+   8. CARDS (por cima do .card do Bootstrap)
+   ========================================================= */
+.card {
+    --bs-card-bg: var(--cor-card);
+    --bs-card-border-color: var(--cor-borda);
+    --bs-card-border-radius: var(--raio);
+    --bs-card-inner-border-radius: calc(var(--raio) - 1px);
+    color: var(--cor-texto);
+    box-shadow: var(--sombra);
+}
+
+/* Efeito hover: o card sobe um pouco e a sombra aumenta */
+.card--hover {
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card--hover:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-forte);
+}
+
+.card__icone {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Imagem dos projetos com a mesma proporção em todos os cards */
+.card--projeto {
+    overflow: hidden;
+}
+
+.card--projeto .card-img-top {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Tags de tecnologia (badges) */
+.tag {
+    background-color: var(--cor-fundo-alt);
+    color: var(--cor-primaria);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 12px;
+}
+
+.link-projeto {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-projeto::after {
+    content: " →";
+}
+
+.link-projeto:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   9. COMO FUNCIONA: círculo numerado antes de cada passo
+   ========================================================= */
+.passos {
+    counter-reset: passo;
+}
+
+.passo {
+    counter-increment: passo;
+}
+
+.passo::before {
+    content: counter(passo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-botao);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* =========================================================
+   10. PARA QUEM É
+   ========================================================= */
+.publico li {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 999px;
+    box-shadow: var(--sombra);
+}
+
+/* =========================================================
+   11. PLANOS
+   ========================================================= */
+.plano {
+    position: relative;
+}
+
+.plano .plano__preco {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0 0 20px;
+}
+
+.plano__preco span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-texto-suave);
+}
+
+.plano__lista {
+    list-style: none;
+    margin: 0 0 28px;
+    padding: 0;
+}
+
+.plano__lista li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Marca de "certo" antes de cada item */
+.plano__lista li::before {
+    content: "✓ ";
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+/* Destaque do plano Completo */
+.plano--destaque {
+    border: 2px solid var(--cor-primaria);
+    box-shadow: var(--sombra-forte);
+}
+
+.plano .plano__selo {
+    position: absolute;
+    top: -14px;
+    right: 24px;
+    z-index: 1;
+    margin: 0;
+    background-color: var(--cor-destaque);
+    color: #252118;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 999px;
+}
+
+/* =========================================================
+   12. FORMULÁRIO E MODAL
+   ========================================================= */
+.form-control,
+.form-select {
+    background-color: var(--cor-fundo);
+    border-color: var(--cor-borda);
+    color: var(--cor-texto);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 0.25rem rgba(var(--cor-primaria-rgb), 0.25);
+}
+
+.modal-content {
+    --bs-modal-bg: var(--cor-card);
+    --bs-modal-border-radius: var(--raio);
+}
+
+/* =========================================================
+   13. RODAPÉ
+   ========================================================= */
+.rodape {
+    background-color: var(--cor-escura);
+    color: #b8ad9f;
+    border-top: 1px solid #3a342b;
+}
+
+/* =========================================================
+   14. RESPONSIVO
+   O Bootstrap já resolve colunas e menu. Aqui só ajustamos
+   tamanhos de fonte e espaçamentos no celular (até 768px).
+   ========================================================= */
+@media (max-width: 767.98px) {
+    .hero {
+        padding: 64px 0;
+    }
+
+    .secao {
+        padding: 56px 0;
+    }
+
+    .secao h2 {
+        font-size: 1.8rem;
+    }
+
+    .plano .plano__selo {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* Quem pede menos movimento no sistema não vê os cards e botões "pulando" */
+@media (prefers-reduced-motion: reduce) {
+    .btn:hover,
+    .card--hover:hover {
+        transform: none;
+    }
+}
