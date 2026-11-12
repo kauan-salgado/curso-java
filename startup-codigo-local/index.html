@@ -146,7 +146,9 @@
             </div>
         </section>
 
-        <!-- PROJETOS: Cards com imagem (card-img-top + img-fluid) -->
+        <!-- PROJETOS: Cards com imagem (card-img-top + img-fluid).
+             O botão "Ver detalhes" usa addEventListener (script.js) para trocar
+             o texto do card e a classe de cor de fundo (bg-primary-subtle) -->
         <section class="secao" id="projetos">
             <div class="container">
                 <h2 class="text-center fw-bold mb-2">Projetos</h2>
@@ -161,13 +163,17 @@
                             <img src="img/go-ticket.png" class="card-img-top img-fluid" alt="Página inicial do Go! Ticket em tema escuro, com o título Sem taxa surpresa no checkout e exemplos de ingressos com QR Code" width="1280" height="800" loading="lazy">
                             <div class="card-body d-flex flex-column p-4">
                                 <h3 class="card-title h5 fw-bold">Go! Ticket</h3>
-                                <p class="card-text text-body-secondary">Plataforma de eventos e bilheteria sem mensalidade: o produtor cria o evento e vende ingressos por Pix ou cartão, e o público recebe o ingresso com QR Code por e-mail.</p>
+                                <p class="card-text text-body-secondary"
+                                   data-detalhes="Para quem é: produtores de eventos que não querem pagar mensalidade. O que resolve: vender ingressos online sem taxa surpresa no checkout.">Plataforma de eventos e bilheteria sem mensalidade: o produtor cria o evento e vende ingressos por Pix ou cartão, e o público recebe o ingresso com QR Code por e-mail.</p>
                                 <ul class="list-unstyled d-flex flex-wrap gap-2 mb-4">
                                     <li class="badge rounded-pill tag">Next.js</li>
                                     <li class="badge rounded-pill tag">Pix e cartão</li>
                                     <li class="badge rounded-pill tag">QR Code</li>
                                 </ul>
-                                <a href="https://go-ticket-pink.vercel.app/" target="_blank" rel="noopener" class="link-projeto mt-auto">Ver projeto</a>
+                                <div class="d-flex align-items-center justify-content-between gap-2 mt-auto">
+                                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill botao-detalhes" aria-pressed="false">Ver detalhes</button>
+                                    <a href="https://go-ticket-pink.vercel.app/" target="_blank" rel="noopener" class="link-projeto">Ver projeto</a>
+                                </div>
                             </div>
                         </article>
                     </div>
@@ -178,13 +184,17 @@
                             <img src="img/papiro.png" class="card-img-top img-fluid" alt="Página inicial do Papiro em tons de creme, com o título Um edital por concurso, um tópico por linha, uma sessão por registro" width="1280" height="800" loading="lazy">
                             <div class="card-body d-flex flex-column p-4">
                                 <h3 class="card-title h5 fw-bold">Papiro</h3>
-                                <p class="card-text text-body-secondary">Ferramenta para concurseiros: edital verticalizado, registro de sessões de estudo e painel com o ranking das disciplinas e os tópicos que mais precisam de revisão.</p>
+                                <p class="card-text text-body-secondary"
+                                   data-detalhes="Para quem é: quem estuda para concursos de TI. O que resolve: mostrar quais tópicos do edital mais precisam de revisão, com base nas sessões de estudo registradas.">Ferramenta para concurseiros: edital verticalizado, registro de sessões de estudo e painel com o ranking das disciplinas e os tópicos que mais precisam de revisão.</p>
                                 <ul class="list-unstyled d-flex flex-wrap gap-2 mb-4">
                                     <li class="badge rounded-pill tag">React</li>
                                     <li class="badge rounded-pill tag">Gráficos</li>
                                     <li class="badge rounded-pill tag">Login GitHub</li>
                                 </ul>
-                                <a href="https://papiro-web-omega.vercel.app/" target="_blank" rel="noopener" class="link-projeto mt-auto">Ver projeto</a>
+                                <div class="d-flex align-items-center justify-content-between gap-2 mt-auto">
+                                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill botao-detalhes" aria-pressed="false">Ver detalhes</button>
+                                    <a href="https://papiro-web-omega.vercel.app/" target="_blank" rel="noopener" class="link-projeto">Ver projeto</a>
+                                </div>
                             </div>
                         </article>
                     </div>
@@ -195,13 +205,17 @@
                             <img src="img/cantinho-espaco.png" class="card-img-top img-fluid" alt="Site do Cantinho da Dê com foto do salão de encontros e o título Um dia inteiro de foco, zero cara de escritório" width="1280" height="800" loading="lazy">
                             <div class="card-body d-flex flex-column p-4">
                                 <h3 class="card-title h5 fw-bold">Cantinho da Dê: espaço para encontros</h3>
-                                <p class="card-text text-body-secondary">Site comercial de uma casa em Brasília para workshops, hospedagem e gravações, com pedido de reserva, tour 360° e contato pelo WhatsApp.</p>
+                                <p class="card-text text-body-secondary"
+                                   data-detalhes="Para quem é: quem procura um espaço em Brasília para workshops, hospedagem ou gravações. O que resolve: conhecer o lugar pelo tour 360° e pedir a reserva sem sair do site.">Site comercial de uma casa em Brasília para workshops, hospedagem e gravações, com pedido de reserva, tour 360° e contato pelo WhatsApp.</p>
                                 <ul class="list-unstyled d-flex flex-wrap gap-2 mb-4">
                                     <li class="badge rounded-pill tag">Next.js</li>
                                     <li class="badge rounded-pill tag">Reservas</li>
                                     <li class="badge rounded-pill tag">Tour 360°</li>
                                 </ul>
-                                <a href="https://cantinhodade.netlify.app/" target="_blank" rel="noopener" class="link-projeto mt-auto">Ver projeto</a>
+                                <div class="d-flex align-items-center justify-content-between gap-2 mt-auto">
+                                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill botao-detalhes" aria-pressed="false">Ver detalhes</button>
+                                    <a href="https://cantinhodade.netlify.app/" target="_blank" rel="noopener" class="link-projeto">Ver projeto</a>
+                                </div>
                             </div>
                         </article>
                     </div>

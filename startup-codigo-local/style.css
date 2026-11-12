@@ -23,6 +23,7 @@
     --cor-texto-suave: #6b6058;     /* texto secundário */
     --cor-borda: #e4d9c8;           /* linhas e bordas */
     --cor-escura: #252118;          /* fundo do contato e do rodapé */
+    --cor-primaria-suave: #f6e1d6;  /* terracota bem claro: card com "Ver detalhes" aberto */
 
     --raio: 16px;
     --sombra: 0 4px 16px rgba(42, 36, 32, 0.08);
@@ -45,6 +46,7 @@
     --cor-texto-suave: #b8ad9f;
     --cor-borda: #3d362d;
     --cor-escura: #12100e;
+    --cor-primaria-suave: #3b2a21;
 
     --sombra: 0 4px 16px rgba(0, 0, 0, 0.3);
     --sombra-forte: 0 12px 28px rgba(0, 0, 0, 0.45);
@@ -59,6 +61,8 @@
 [data-bs-theme="dark"] {
     --bs-primary: var(--cor-primaria);
     --bs-primary-rgb: var(--cor-primaria-rgb);
+    --bs-primary-bg-subtle: var(--cor-primaria-suave);   /* usada por .bg-primary-subtle */
+    --bs-primary-border-subtle: var(--cor-primaria);
     --bs-body-bg: var(--cor-fundo);
     --bs-body-color: var(--cor-texto);
     --bs-secondary-color: var(--cor-texto-suave);

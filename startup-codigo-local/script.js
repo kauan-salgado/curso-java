@@ -83,7 +83,35 @@ document.querySelectorAll('#menu-principal .nav-link').forEach((link) => {
 
 
 /* ---------------------------------------------------------
-   4. PLANOS + MODAL DO BOOTSTRAP
+   4. CARDS DE PROJETO: botão "Ver detalhes"
+   (atividade prática: Card do Bootstrap + addEventListener)
+   Ao clicar, o card troca o texto e a cor de fundo.
+   Clicando de novo, volta ao normal.
+   --------------------------------------------------------- */
+document.querySelectorAll('.botao-detalhes').forEach((botao) => {
+    // closest() sobe no HTML até achar o card onde o botão está
+    const card = botao.closest('.card');
+    const texto = card.querySelector('.card-text');
+
+    // Guarda o texto original para poder voltar a ele depois
+    const textoResumo = texto.textContent;
+    const textoDetalhes = texto.dataset.detalhes;
+
+    botao.addEventListener('click', () => {
+        // toggle() adiciona a classe se não tiver e remove se tiver.
+        // Ele devolve true quando a classe acabou de ser adicionada.
+        const mostrandoDetalhes = card.classList.toggle('bg-primary-subtle');
+        card.classList.toggle('border-primary', mostrandoDetalhes);
+
+        texto.textContent = mostrandoDetalhes ? textoDetalhes : textoResumo;
+        botao.textContent = mostrandoDetalhes ? 'Ver resumo' : 'Ver detalhes';
+        botao.setAttribute('aria-pressed', mostrandoDetalhes);
+    });
+});
+
+
+/* ---------------------------------------------------------
+   5. PLANOS + MODAL DO BOOTSTRAP
    Ao clicar em "Escolher Básico/Completo", lemos os dados
    data-plano e data-preco do botão e abrimos o modal.
    --------------------------------------------------------- */
@@ -133,7 +161,7 @@ document.getElementById('modal-plano').addEventListener('hidden.bs.modal', () =>
 
 
 /* ---------------------------------------------------------
-   5. FORMULÁRIO DE CONTATO
+   6. FORMULÁRIO DE CONTATO
    - e.preventDefault() impede a página de recarregar
    - validamos os campos e marcamos com .is-invalid / .is-valid
    - se estiver tudo certo, abrimos o WhatsApp com a mensagem

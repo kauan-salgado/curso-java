@@ -14,8 +14,7 @@ Arquivos e exercícios do curso de programação de Kauan Derick Narcizo Salgado
 Protótipo da startup **Código Local** (sites para pequenos negócios), feito no desafio da semana de Bootstrap e JavaScript.
 - `index.html` — site da startup com Bootstrap 5 via CDN: navbar responsiva com menu hambúrguer, grid, cards, botões, formulário e modal
 - `style.css` — identidade visual da marca aplicada por cima das variáveis do Bootstrap (tema claro e escuro)
-- `script.js` — modal dos planos, validação do formulário com envio pelo WhatsApp, alertas, modo escuro salvo no `localStorage` e ano automático no rodapé
-- `mini-projeto.html` — atividade prática: Card do Bootstrap com botão que troca o texto e a cor do card usando `addEventListener`
+- `script.js` — botão "Ver detalhes" nos cards de projeto (atividade prática: troca o texto e a cor do card com `addEventListener`), modal dos planos, validação do formulário com envio pelo WhatsApp, alertas, modo escuro salvo no `localStorage` e ano automático no rodapé
 - `img/` — logo e capturas de tela dos projetos
 
 ## Como abrir
